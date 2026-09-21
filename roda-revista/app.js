@@ -10,6 +10,9 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
 const pad = n => String(n).padStart(2, '0');
 const PDFJS = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/';
+const COARSE = matchMedia('(pointer:coarse)').matches;
+const DPR = Math.min(devicePixelRatio || 1, COARSE ? 2 : 3);
+const WCAP = COARSE ? 1500 : 2200;
 
 let pdf = null, N = 0, ratio = 0.707, single = false, pw = 0, L = 0, max = 0, cur = 0;
 let leaves = [], faces = [], lock = false, z = 1, px = 0, py = 0, ready;
@@ -97,7 +100,7 @@ function apply(instant) {
   $('#prog i').style.width = (last + 1) / N * 100 + '%';
   $('#prev').disabled = cur === 0;
   document.querySelectorAll('.th').forEach(t => t.classList.toggle('on', v.includes(+t.dataset.p)));
-  const w = Math.min(2200, Math.round(pw * (devicePixelRatio || 1) * 2));
+  const w = Math.min(WCAP, Math.round(pw * DPR * (COARSE ? 1.3 : 2)));
   for (let p = v[0] - 3; p <= last + 4; p++) if (p >= 0 && p < N) fill(p, page(p), w);
   try { history.replaceState(null, '', '#' + (v[0] + 1)); } catch (e) {}
 }
