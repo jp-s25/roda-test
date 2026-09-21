@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>17 Semanas Creando una Empresa — Rodá EJ 2026</title>
+<meta name="description" content="La historia de Rodá EJ 2026: 17 semanas creando una empresa, desde la idea hasta el cierre.">
+<meta name="theme-color" content="#001731">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:type" content="website">
+<meta property="og:title" content="17 Semanas Creando una Empresa — Rodá EJ 2026">
+<meta property="og:description" content="La historia de Rodá EJ 2026: 17 semanas creando una empresa, desde la idea hasta el cierre.">
+<!-- Al publicar, usá la URL absoluta: https://tu-dominio.com/assets/portada.jpg -->
+<meta property="og:image" content="assets/portada.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700;800&family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<link rel="stylesheet" href="style.css">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script defer src="app.js"></script>
+</head>
+<body>
+
+<section id="landing">
+  <p class="k" style="--i:0">Digital Edition</p>
+  <h1 style="--i:1"><span>17 SEMANAS</span><em>CREANDO UNA EMPRESA</em></h1>
+  <p class="s" style="--i:2">RODÁ EJ · 2026</p>
+  <p class="q" style="--i:3">“Una idea. Un equipo. 17 semanas.”</p>
+  <button id="open" class="cta" style="--i:4">ABRIR REVISTA <b>→</b></button>
+</section>
+
+<section id="intro" hidden><p id="itxt"></p><button id="skip">Saltar</button></section>
+
+<section id="loader" hidden>
+  <i></i><p id="lt">Cargando revista…</p>
+  <div id="err" hidden>
+    <p></p>
+    <label class="cta">Elegir PDF<input type="file" id="pick" accept="application/pdf" hidden></label>
+  </div>
+</section>
+
+<main id="viewer" hidden>
+  <div class="tag">RODÁ <span>/ 2026</span></div>
+  <div id="stage"><div id="zoom"><div id="book"></div></div></div>
+  <div id="prog"><i></i></div>
+  <div id="gopop" hidden><label>Página <input id="gin" type="number" min="1" inputmode="numeric"></label><button id="go">IR</button></div>
+  <nav id="bar">
+    <button id="prev" aria-label="Página anterior">←<span>Anterior</span></button>
+    <button id="lbl" aria-label="Ir a página" title="Ir a página">Página 01 / 00</button>
+    <button id="next" aria-label="Página siguiente"><span>Siguiente</span>→</button>
+    <u></u>
+    <button id="bpages" aria-label="Ver páginas"><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg><span>Ver páginas</span></button>
+    <button id="bview" aria-label="Una página" title="Una página / Dos páginas"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="7" height="14" rx="1"/><rect class="r" x="13" y="5" width="7" height="14" rx="1"/></svg></button>
+    <button id="bzoom" aria-label="Zoom"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="M15 15l6 6"/></svg></button>
+    <button id="bfs" aria-label="Pantalla completa"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    <button id="bshare" aria-label="Compartir"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 8l5-5 5 5M5 14v6h14v-6"/></svg></button>
+  </nav>
+  <aside id="thumbs" hidden><header><span>Páginas</span><button id="tclose" aria-label="Cerrar">✕</button></header><div id="tgrid"></div></aside>
+</main>
+
+<section id="end" hidden>
+  <p class="a">17 semanas después…</p>
+  <p class="b">Gracias por ser parte de Rodá.</p>
+  <img class="logo" src="assets/logo.png" alt="Rodá" onerror="this.outerHTML='<b class=logo>RODÁ</b>'">
+  <p class="y">2026</p>
+  <div class="row"><button id="again">Volver a leer</button><button id="eshare">Compartir</button><button id="eclose">Cerrar</button></div>
+</section>
+
+<div id="toast" role="status"></div>
+</body>
+</html>
